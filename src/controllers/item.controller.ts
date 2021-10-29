@@ -14,7 +14,7 @@ export async function searchItems(req: Request<{}, {}, {}, QueryParams>, res: Re
     if (!data)
       return res.sendStatus(404);
     const mappedItems = resultsToListItem(data.results, categoryPath.path_from_root);
-    res.send(mappedItems);
+    res.send(mappedItems); 
   }
   catch (e: any) {
     logger.error(e)

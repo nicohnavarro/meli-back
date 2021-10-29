@@ -1,4 +1,5 @@
 interface Item{
+  author?:Author,
   id:String,
   title:String,
   price:Price,
@@ -6,7 +7,8 @@ interface Item{
   condition:String,
   free_shipping:Boolean,
   sold_quantity?:Number,
-  description?:String
+  description?:String,
+  categories?:String[]
 }
 
 type Price ={
