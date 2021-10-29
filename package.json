@@ -9,6 +9,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "config": "^3.3.6",
     "cors": "^2.8.5",
     "dayjs": "^1.10.7",
