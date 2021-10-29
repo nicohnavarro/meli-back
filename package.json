@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node build/src/index.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
