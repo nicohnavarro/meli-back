@@ -1,14 +1,14 @@
 export type CategoryData = {
-  category_id: String,
-  category_name: String
+  category_id: string,
+  category_name: string
 }
 
 export type CategoryPath = {
-  id:String,
-  name:String,
+  id:string,
+  name:string,
 }
 
 export type QueryParams = {
-  q: String,
-  l?: String
+  q: string,
+  l?: string
 }

@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios'
 import config from 'config'
 import { CategoryData } from '../utils/types';
 
-export async function getSearchItems(query: String, limit: Number) {
+export async function getSearchItems(query: string, limit: number) {
   try {
     const axiosConfig: AxiosRequestConfig = {
       method: 'GET',
@@ -19,7 +19,7 @@ export async function getSearchItems(query: String, limit: Number) {
   }
 }
 
-export async function getSearchCategory(query: String, limit: Number) {
+export async function getSearchCategory(query: string, limit: number) {
   try {
     const axiosConfig: AxiosRequestConfig = {
       method: 'GET',
@@ -36,7 +36,7 @@ export async function getSearchCategory(query: String, limit: Number) {
   }
 }
 
-export async function getItem(id:String){
+export async function getItem(id:string){
   try {
     const axiosConfig: AxiosRequestConfig = {
       method: 'GET',
@@ -49,7 +49,7 @@ export async function getItem(id:String){
   }
 }
 
-export async function getItemDescription(id:String){
+export async function getItemDescription(id:string){
   try {
     const axiosConfig: AxiosRequestConfig = {
       method: 'GET',
@@ -62,7 +62,7 @@ export async function getItemDescription(id:String){
   }
 }
 
-export async function getCategoryPathById(id: String) {
+export async function getCategoryPathById(id: string) {
   try {
     const axiosConfig: AxiosRequestConfig = {
       method: 'GET',

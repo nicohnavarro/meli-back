@@ -24,7 +24,7 @@ export async function searchItems(req: Request<{}, {}, {}, QueryParams>, res: Re
 
 export async function getItemById(req: Request, res: Response) {
   try {
-    const id: String = req.params.id;
+    const id: string = req.params.id;
     const item = await getItem(id);
     const itemDescription = await getItemDescription(id);
     const itemCategory = await getCategoryPathById(item.category_id)

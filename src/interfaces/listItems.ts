@@ -1,10 +1,10 @@
-interface ListItems {
+interface ItemsList {
   author:Author,
-  categories:String[],
+  categories:string[],
   items:Item[]
 }
 
 type Author={
-  name:String,
-  lastname:String
+  name:string,
+  lastname:string
 }

@@ -7,10 +7,10 @@ import cors from 'cors';
 
 const app = express()
 app.use(express.json());
-app.use(cors());
 app.enable('trust proxy')
 
 const port = config.get<number>('port')
+app.use(cors());  
 
 app.listen(port, () => {
   logger.info(`Backend running on port ${port}`)

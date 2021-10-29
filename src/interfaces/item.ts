@@ -1,18 +1,18 @@
 interface Item{
   author?:Author,
-  id:String,
-  title:String,
+  id:string,
+  title:string,
   price:Price,
-  picture:String,
-  condition:String,
+  picture:string,
+  condition:string,
   free_shipping:Boolean,
-  sold_quantity?:Number,
-  description?:String,
-  categories?:String[]
+  sold_quantity?:number,
+  description?:string,
+  categories?:string[]
 }
 
 type Price ={
-  currency:String,
-  amount:Number,
-  decimals:Number
+  currency:string,
+  amount:number,
+  decimals:number
 }

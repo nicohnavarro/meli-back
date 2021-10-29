@@ -2,18 +2,18 @@ import config from 'config'
 import { CategoryPath } from './types';
 const author: Author = config.get('author');
 
-export const resultsToListItem = (results: any[], categoryPath: CategoryPath[]): ListItems => {
-  const categories: String[] = categoryPath.map(e => e.name);
+export const resultsToListItem = (results: any[], categoryPath: CategoryPath[]): ItemsList => {
+  const categories: string[] = categoryPath.map(e => e.name);
   const items: Item[] = results.map(item => formatItem(item));
-  const listItem: ListItems = {
+  const itemList: ItemsList = {
     author,
     categories,
     items
   }
-  return listItem;
+  return itemList;
 }
 
-export const formatItem = (item: any, isOne?: Boolean, description?: String, categoryPath?: CategoryPath[]): Item => {
+export const formatItem = (item: any, isOne?: Boolean, description?: string, categoryPath?: CategoryPath[]): Item => {
   let itemGenerated: Item = {
     id: item.id,
     title: item.title,
@@ -24,13 +24,13 @@ export const formatItem = (item: any, isOne?: Boolean, description?: String, cat
   }
   if (isOne) {
     const sold_quantity = item.sold_quantity;
-    const categories: String[] | undefined = categoryPath?.map(e => e.name);
+    const categories: string[] | undefined = categoryPath?.map(e => e.name);
     itemGenerated = { ...itemGenerated, author, description, sold_quantity, categories }
   }
   return itemGenerated;
 }
 
-const formatPrice = (amount: Number, currency: String): Price => {
+const formatPrice = (amount: number, currency: string): Price => {
   console.log()
   let arrayAmount = amount.toString().split(".");
   const price: Price = {
