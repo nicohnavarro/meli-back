@@ -1,5 +1,5 @@
 import config from 'config'
-import { CategoryPath } from './types';
+import { CategoryPath, Picture } from './types';
 const author: Author = config.get('author');
 
 export const resultsToListItem = (results: any[], categoryPath: CategoryPath[]): ItemsList => {
@@ -20,7 +20,7 @@ export const formatItem = (item: any, isOne?: Boolean, description?: string, cat
     price: formatPrice(item.price, item.currency_id),
     condition: item.condition,
     free_shipping: item.free_shipping,
-    picture: item.thumbnail
+    picture: isOne ? getHighImage(item.pictures as Picture[]) : item.thumbnail,
   }
   if (isOne) {
     const sold_quantity = item.sold_quantity;
@@ -31,7 +31,6 @@ export const formatItem = (item: any, isOne?: Boolean, description?: string, cat
 }
 
 const formatPrice = (amount: number, currency: string): Price => {
-  console.log()
   let arrayAmount = amount.toString().split(".");
   const price: Price = {
     currency: currency,
@@ -41,3 +40,11 @@ const formatPrice = (amount: number, currency: string): Price => {
   return price;
 };
 
+
+const getHighImage = (images: Picture[]) => {
+  let niceImage = images.find(image => {
+    let arraySize = image.size.split("x");
+    return arraySize[0] > '500' && arraySize[1] > '500'
+  });
+  return (niceImage === undefined) ? images[0].secure_url : niceImage.secure_url;
+};
