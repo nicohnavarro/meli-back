@@ -1,9 +1,8 @@
 FROM node:15.5-alpine
-WORKDIR /app
+WORKDIR /usr/src/app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install
-
 COPY . .
 RUN yarn build
 EXPOSE 4000
