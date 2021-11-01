@@ -42,6 +42,7 @@ const formatPrice = (amount: number, currency: string): Price => {
 
 
 const getHighImage = (images: Picture[]) => {
+  console.log(images);
   let niceImage = images.find(image => {
     let arraySize = image.size.split("x");
     return arraySize[0] > '500' && arraySize[1] > '500'

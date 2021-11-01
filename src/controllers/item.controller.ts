@@ -28,6 +28,7 @@ export async function getItemById(req: Request, res: Response) {
     const item = await getItem(id);
     const itemDescription = await getItemDescription(id);
     const itemCategory = await getCategoryPathById(item.category_id)
+    console.log(item);
     res.send(formatItem(item,true, itemDescription.plain_text,itemCategory.path_from_root))
   }
   catch (e: any) {
